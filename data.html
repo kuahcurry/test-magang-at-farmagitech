@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Data Farmagitech Data Management</title>
+        <link rel="stylesheet" href="css/data.css">
+        <script src="script/data.js" defer></script>
+        <style>
+            .content {
+                display: none; /* Hide all sections initially */
+            }
+            .active {
+                display: block; /* Show only the active section */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-box">
+            <h1>Data Management</h1>
+            <div class="button-container">
+                <button type="button" id="create">Create Data List</button>
+                <button type="button" id="read">Read Data List</button>
+                <button type="button" id="update">Update Data List</button>
+                <button type="button" id="delete">Delete Data List</button>
+                <button type="button" id="getbyid">Get Group By ID</button>
+                <button type="button" id="logout">Logout</button>
+            </div>
+
+            <div id="create-section" class="content">
+                <h2>Create Data</h2>
+                <form id="create-form">
+                <div class="form-group">
+                    <label for="group_id">Group ID:</label>
+                    <input type="number" id="group_id" name="group_id" value="-1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="group_name">Group Name:</label>
+                    <input type="text" id="group_name" name="group_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="active">Active:</label>
+                    <select id="active" name="active">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <button type="submit">Create Group</button>
+                </div>
+                </form>
+            </div>
+
+            <div id="read-section" class="content">
+                <h2>Read Data</h2>
+                <table id="group-table">
+                    <thead>
+                        <tr>
+                            <th>Group ID</th>
+                            <th>Group Name</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data dari grup disini -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="update-section" class="content">
+                <h2>Edit Group</h2>
+                <form id="update-form">
+                    <div class="form-group">
+                        <label for="edit_group_id">Group ID:</label>
+                        <input type="number" id="edit_group_id" name="edit_group_id" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="edit_group_name">Group Name:</label>
+                        <input type="text" id="edit_group_name" name="edit_group_name" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="edit_active">Active:</label>
+                        <select id="edit_active" name="edit_active">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+            
+                    <div class="form-group">
+                        <button type="submit">Update Group</button>
+                    </div>
+                </form>
+            </div>            
+            
+            <div id="delete-section" class="content">
+                <h2>Delete Data</h2>
+                <div class="form-group">
+                <form id="delete-form">
+                    <label for="delete_group_id">Group ID:</label>
+                    <input type="number" id="delete_group_id" required><br><br>
+                    <button type="submit">Delete Group</button>
+                </form>
+                <p id="delete-result"></p>
+                </div>
+            </div>            
+
+            <div id="getbyid-section" class="content">
+                <h2>Get Data by ID</h2>
+                <div class="form-group">
+                <form id="getbyid-form">
+                    <label for="getbyid_input">Group ID:</label>
+                    <input type="number" id="getbyid_input" required><br><br>
+                    <button type="submit">Fetch Data</button>
+                </div>
+                </form>
+                <div id="getbyid-result"></div>
+            </div>                      
+
+            <div id="logout-section" class="content">
+                <h2>Logout Section</h2>
+                <p>Logout options go here...</p>
+            </div>
+        </div>
+    </body>
+</html>
